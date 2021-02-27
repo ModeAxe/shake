@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert, Vibration } from 'react-native';
+import Fire from "../Fire";
 
 
 export default function Shakee() {
@@ -13,24 +14,30 @@ export default function Shakee() {
     1 * ONE_SECOND_IN_MS,
   ];
   const shake = () => {
-      if(status == 'waiting...'){
-        Vibration.vibrate(PATTERN, true)
+      console.log(Fire.shared.getShake());
+      if(status == 'T'){
+        Vibration.vibrate([0,100],true)
         setShake('Shaking');          
       }
       else{
           Vibration.cancel()
           setShake('waiting...');          
       }
-  }
+  };
+
+  useEffect(() => {
+    shake();
+  },[])
+
   return (
     <View style={styles.container}>
         <Text>{status}</Text>
-
+{/* 
       <TouchableOpacity onPress={shake}>      
       <View style={styles.shakee}>
           <Text>Shakee</Text>
       </View>      
-      </TouchableOpacity>
+      </TouchableOpacity> */}
       <StatusBar style="auto" />            
     </View>
     

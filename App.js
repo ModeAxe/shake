@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Home from './screens/home';
 import Navigator from './routes/appNavigator';
 
 export default function App() {
