@@ -13,17 +13,21 @@ export default function Shakee() {
   const PATTERN = [
     1 * ONE_SECOND_IN_MS,
   ];
+  const shakeHelper = () => {
+    state = Fire.shared.getShake();
+    console.log(state)
+    if(state == 'T'){
+      Vibration.vibrate([0,1],true)
+      setShake('Shaking');          
+    }
+    else{
+        Vibration.cancel()
+        setShake('waiting...');          
+    }
+  };
+
   const shake = () => {
-      state = Fire.shared.getShake();
-      console.log(state)
-      if(state == 'T'){
-        Vibration.vibrate([0,1],true)
-        setShake('Shaking');          
-      }
-      else{
-          Vibration.cancel()
-          setShake('waiting...');          
-      }
+    var no = setInterval(shakeHelper, 1000)
   };
 
   useEffect(() => {

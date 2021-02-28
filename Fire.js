@@ -37,16 +37,15 @@ class Fire {
         return (firebase.auth().currentUser || {}).uid;
     }
 
-    async getShake(){
+    getShake(){
 
         var ref = firebase.database().ref('/shaking');
         var state;
 
-        var s = await ref.once('value');
-        state = (JSON.stringify(s))[10];
-        while (state !== 'T' || state !== 'F') {
-            break;
-        }
+        var s = ref.on('value', snapshot => {
+            state = snapshot.val().state;
+            // console.log(state)
+        });
         return state;
 
     }
