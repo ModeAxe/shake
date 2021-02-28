@@ -2,7 +2,19 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
 import Fire from "../Fire";
+import RNShake from "react-native-shake";
 
+class MyComponent extends React.Component {
+  componentWillMount() {
+    RNShake.addEventListener('ShakeEvent', () => {
+      console.log("Shake");
+    });
+  }
+ 
+  componentWillUnmount() {
+    RNShake.removeEventListener('ShakeEvent');
+  }
+}
 
 export default function Shaker() {
 

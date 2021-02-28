@@ -14,9 +14,10 @@ export default function Shakee() {
     1 * ONE_SECOND_IN_MS,
   ];
   const shake = () => {
-      console.log(Fire.shared.getShake());
-      if(status == 'T'){
-        Vibration.vibrate([0,100],true)
+      state = Fire.shared.getShake();
+      console.log(state)
+      if(state == 'T'){
+        Vibration.vibrate([0,1],true)
         setShake('Shaking');          
       }
       else{
