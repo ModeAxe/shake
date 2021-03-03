@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 
 
 export default function Home( {navigation} ) {
@@ -15,15 +15,11 @@ export default function Home( {navigation} ) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={shaker}>
-      <View style={styles.shaker}>
-        <Text>Shaker</Text>
-      </View>
+        <Image style={styles.buttons} source = {require('../assets/shaker.png')}/>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={shakee}>      
-      <View style={styles.shakee}>
-          <Text>Shakee</Text>
-      </View>      
+      <TouchableOpacity onPress={shakee}>
+      <Image style={styles.buttons} source = {require('../assets/shakee.png')}/>  
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
@@ -47,6 +43,12 @@ const styles = StyleSheet.create({
   shakee:{
     backgroundColor: '#ffdb58',
     padding: 20,
+  },
+  buttons:{
+    width: 200,
+    height: 200,
+    resizeMode: 'stretch',    
+
   }  
 });
 

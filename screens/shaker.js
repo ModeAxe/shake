@@ -43,9 +43,11 @@ export default function Shaker() {
 }
 
 const styles = StyleSheet.create({
+//color palette: https://www.color-hex.com/color-palette/76334
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f1e4d6',
     alignItems: 'center',
     justifyContent: 'center',
   },

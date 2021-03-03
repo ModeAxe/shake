@@ -36,13 +36,7 @@ export default function Shakee() {
 
   return (
     <View style={styles.container}>
-        <Text>{status}</Text>
-{/* 
-      <TouchableOpacity onPress={shake}>      
-      <View style={styles.shakee}>
-          <Text>Shakee</Text>
-      </View>      
-      </TouchableOpacity> */}
+        <Text style={styles.status}>{status}</Text>
       <StatusBar style="auto" />            
     </View>
     
@@ -51,9 +45,11 @@ export default function Shakee() {
 }
 
 const styles = StyleSheet.create({
+//color palette: https://www.color-hex.com/color-palette/76334
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#931009',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -64,6 +60,9 @@ const styles = StyleSheet.create({
   shakee:{
     backgroundColor: '#ffb4b4',
     padding: 20,
+  },
+  status:{
+    color:'#fff'
   }  
 });
 
