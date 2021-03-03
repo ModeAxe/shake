@@ -31,18 +31,21 @@ export default function Home( {navigation} ) {
 }
 
 const styles = StyleSheet.create({
+
+//color palette: https://www.color-hex.com/color-palette/76334
+
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#b1cdab',
     alignItems: 'center',
     justifyContent: 'center',
   },
   shaker:{
-    backgroundColor: '#87ceeb',
+    backgroundColor: '#ffdb58',
     padding: 20,
   },
   shakee:{
-    backgroundColor: '#ffb4b4',
+    backgroundColor: '#ffdb58',
     padding: 20,
   }  
 });
